@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>AstraPlayers</AssemblyName>
+    <RootNamespace>AstraPlayers</RootNamespace>
+    <Version>1.0.0</Version>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- 方式 A：从 NuGet 引用 SPT 4.1.x 服务端程序集（推荐） -->
+  <ItemGroup>
+    <PackageReference Include="SPTarkov.Server.Core" Version="4.1.*" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="SPTarkov.DI" Version="4.1.*" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="SPTarkov.Common" Version="4.1.*" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="config.jsonc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

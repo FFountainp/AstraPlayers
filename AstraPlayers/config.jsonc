@@ -1,0 +1,11 @@
+{
+  // 总开关：false 时所有 /astra/* 接口返回“已关闭”
+  "enabled": true,
+
+  // 在线判定窗口（分钟）：最近 N 分钟内有过 GameStart / KeepAlive 的玩家算在线
+  // 默认 10 分钟，范围 1-1440
+  "onlineWindowMinutes": 10,
+
+  // 每次 API 请求输出日志（调试时打开；Astra bot 轮询频繁时建议关闭）
+  "logRequests": false
+}

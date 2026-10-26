@@ -1,0 +1,25 @@
+Astra Players API v1.0.0
+========================
+
+用途：给 Astra bot 查询 SPT 服务端在线玩家人数和昵称。
+
+安装：
+1. 关闭 SPT.Server.exe。
+2. 解压本压缩包到塔科夫离线版根目录（例如 D:\tkf）。
+3. 确认：
+   D:\tkf\SPT_Runtime\user\mods\AstraPlayers\AstraPlayers.dll
+   D:\tkf\SPT_Runtime\user\mods\AstraPlayers\config.jsonc
+4. 启动 SPT.Server.exe，控制台看到 [AstraPlayers] v1.0.0 已加载 即成功。
+
+Astra bot 调用：
+  GET https://127.0.0.1:6969/astra/online
+  Header: responsecompressed: 0
+  忽略自签证书（curl 用 -k，Python 用 verify=False）
+
+返回里的 message 字段可以直接发群，例如：
+  服务器当前在线 1 人：PlayerName
+
+没有 responsecompressed: 0 时，SPT 返回的是 zlib 压缩体，
+需要用 zlib 解压后再按 JSON 解析。
+
+详细说明见 README.md。

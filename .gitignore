@@ -1,0 +1,19 @@
+# Build output
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.pdb
+
+# Local test artifacts
+dist/stage/
+dist/verify/
+server*.log
+resp-*.json
+plain-*.json
+*.headers.txt
+
+# Secrets / local credentials
+github_token.txt
+.env
